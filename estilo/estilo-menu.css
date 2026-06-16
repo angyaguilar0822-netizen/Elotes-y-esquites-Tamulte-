@@ -1,0 +1,245 @@
+/* ==========================================================
+   1. RESETEO GENERAL (Quita los bordes blancos del navegador)
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    background-color: #ffffff;
+}
+.barras {
+    background-color: #fce4a8; 
+    padding: 15px 0;             /* Mismo alto que Inicio */
+    text-align: center;          /* Centra todo perfectamente */
+    width: 100%;                 
+    display: block;              
+}
+
+/* Manejo de espacios de los bloques contenedores */
+.barras a, 
+.barras .dropdown {
+    display: inline-block;       
+    vertical-align: middle;      
+    margin: 0 10px;              /* 🌟 SOLUCIÓN: Reduce el espacio exterior para que no se estire */
+}
+
+/* Estilo base y tamaño exacto de las burbujas */
+.barras a, 
+.barras .dropbtn {
+    font-family: Arial, sans-serif;   
+    font-weight: normal;         
+    font-size: 16px;           
+    text-decoration: none;
+    color: #2c5e2e;              
+    padding: 6px 18px;           /* 🌟 Espacio interno idéntico al Inicio */
+    border-radius: 20px;         
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Asegura que el botón dentro del dropdown no sume márgenes extra */
+.barras .dropdown .dropbtn {
+    margin: 0 !important;        /* Evita que se duplique el espaciado en Nuestro Menú */
+}
+
+/* BURBUJA AMARILLA ACTIVA */
+.barras a.activo, 
+.barras .dropdown .dropbtn.activo {
+    background-color: #e6e600 !important; 
+    color: #2c5e2e !important;
+}
+
+/* Efecto burbuja suave al pasar el cursor */
+.barras a:hover:not(.activo):not(.didi) {
+    background-color: #e6e600eb !important; 
+    color: #2c5e2e !important;
+}
+
+/* BOTÓN DE DIDI */
+.barras a.didi {
+    color: #ff9900 !important;
+    background-color: transparent !important; 
+}
+
+.barras a.didi:hover {
+    background-color: #e6e600eb
+     !important; 
+    color: #2c5e2e !important;            
+}
+/* ==========================================================
+   3. MENÚ DESPLEGABLE (TOSTITOS, MARUCHAN, ETC.)
+   ========================================================== */
+.dropdown {
+    position: relative;
+    display: inline-block; /* Cambiado a inline-block para igualar el comportamiento de Inicio */
+
+}
+
+/* La cajita blanca con la lista de productos */
+.dropdown-content {
+    display: none;               
+    position: absolute;
+    background-color: #ffffff;   
+    min-width: 190px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    border-radius: 8px;          
+    z-index: 99999 !important;   /* Se posiciona por encima de las fotos */
+    top: 100%;                   /* Se acomoda justo abajo de la burbuja */
+    left: 0;
+    padding: 0;                  
+    overflow: hidden !important; /* Corta el fondo amarillo para que no se salga de las esquinas */
+}
+
+/* Opciones de adentro del submenú */
+.dropdown-content a {
+    color: #2c5e2e !important;
+    padding: 12px 16px !important;
+    display: block !important;    
+    text-align: left !important;
+    font-size: 15px;
+    font-weight: normal !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;  
+    border-bottom: 1px solid #f2f2f2;
+    width: 100%;
+    margin-left: 0 !important;    /* Quita el margen izquierdo dentro del submenú */
+}
+
+/* Elimina la línea divisoria del último producto */
+.dropdown-content a:last-child {
+    border-bottom: none !important;
+}
+
+/* Muestra la cajita flotante al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block !important;
+}
+
+/* Efecto amarillo suave que respeta las esquinas redondeadas */
+.dropdown-content a:hover {
+    background-color: #f5df7a !important; 
+    color: #2c5e2e !important;
+}
+
+/* ==========================================================
+   4. SECCIÓN DE TARJETAS DE PRODUCTOS
+   ========================================================== */
+.titulo-seccion {
+    text-align: center;
+    color: #2c5e2e;
+    font-size: 28px;
+    margin: 40px 0 20px 0;
+}
+
+.contenedor-menu {
+    display: flex;
+    justify-content: center;   
+    flex-wrap: wrap;           
+    gap: 30px;                 
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;            
+}
+
+.tarjeta-producto {
+    background-color: #ffffff;
+    border-radius: 15px;       
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); 
+    padding: 15px;
+    text-align: center;
+    width: 280px;              
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 250px;             
+    object-fit: cover;         
+    border-radius: 12px;       
+    margin-bottom: 15px;
+}
+
+.tarjeta-producto h3 {
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+/* Oculta las secciones por defecto para que JavaScript las controle una por una */
+.seccion-menu {
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.4s ease; /* Le da un efecto de aparición suave muy pro */
+}
+
+/* Animación opcional para que aparezca bonito al cambiar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* ==========================================================
+   5. DISEÑO RESPONSIVO (Añadir al final de estilo menu.css)
+   ========================================================== */
+@media screen and (max-width: 768px) {
+    /* Ajustar barra superior */
+    .barras {
+        padding: 10px;
+    }
+
+    .barras a, 
+    .barras .dropdown {
+        display: block;
+        width: 90%;
+        margin: 8px auto;
+        text-align: center;
+    }
+
+    .barras .dropdown .dropbtn {
+        width: 100%;
+    }
+
+    /* Menú desplegable adaptado a móvil */
+    .dropdown-content {
+        position: static; /* Ya no flota, empuja el contenido hacia abajo */
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #fff9e6; /* Un tono sutil para diferenciarlo */
+    }
+
+    .dropdown-content a {
+        text-align: center !important;
+    }
+
+    /* Título de la sección */
+    .titulo-seccion {
+        font-size: 22px;
+        margin: 25px 0 15px 0;
+    }
+
+    /* Contenedor de Tarjetas */
+    .contenedor-menu {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    /* Forzar que las tarjetas usen el ancho disponible en pantallas muy chicas */
+    .tarjeta-producto {
+        width: 100%;
+        max-width: 320px; 
+    }
+}

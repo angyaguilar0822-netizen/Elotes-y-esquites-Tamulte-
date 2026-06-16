@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Menu</title>
+    <link rel="stylesheet" href="../estilo/estilo-menu.css">
+</head>
+<body>
+ 
+    <nav class="barras">
+        <a href="../index.html">Inicio</a>
+        
+        <div class="dropdown">
+            <a href="#" class="activo dropbtn">Nuestro Menú</a>
+            <div class="dropdown-content">
+                <a href="#" onclick="mostrarSeccion('elotes')">Elotes</a>
+                <a href="#" onclick="mostrarSeccion('esquites')">Esquites</a>
+                <a href="#" onclick="mostrarSeccion('tostitos')">Tostitos</a>
+                <a href="#" onclick="mostrarSeccion('maruchan')">Maruchan</a>
+                <a href="#" onclick="mostrarSeccion('chicharron')">Chicharrón</a>
+                <a href="#" onclick="mostrarSeccion('ingredientes')">Ingredientes Extras</a>
+            </div>
+        </div>
+        
+        <a href="../secciones/ubicaciones.html">Ubicaciones</a>
+        <a href="../secciones/contacto.html">Contacto</a>
+        <a href="https://www.didi-food.com/es-MX/food/store/5764607779302801721/" target="_blank" class="didi">Pide por App de Didi</a>
+    </nav>
+
+    <section id="elotes" class="seccion-menu">
+        <h1 class="titulo-seccion">Nuestros Elotes</h1>
+        <div class="contenedor-menu">
+            <div class="tarjeta-producto">
+                <img src="../imagenes/seccion menu elotes (1).jpg" alt="Elotes tradicionales">
+                <h3>Elotes tradicionales</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/seccion elotes ( 2).jpg" alt="Elotes revolcados con sabrita">
+                <h3>Elotes revolcados con sabrita</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/seccione elotes (3).jpg" alt="Elote volcán">
+                <h3>Elote volcán</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="esquites" class="seccion-menu">
+        <h1 class="titulo-seccion">Nuestros Esquites</h1>
+        <div class="contenedor-menu">
+            <div class="tarjeta-producto">
+                <img src="../imagenes/Esquites tradicionales.jpg" alt="Esquites tradicionales">
+                <h3>Esquites tradicionales</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/Esquites preparados.jpg" alt="Esquites especiales">
+                <h3>Esquites especiales con queso</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/Tosti esquite.jpg" alt="Tosti-esquites">
+                <h3>Tosti-esquites locos</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="tostitos" class="seccion-menu">
+        <h1 class="titulo-seccion">Nuestros Tostitos</h1>
+        <div class="contenedor-menu">
+            <div class="tarjeta-producto">
+                <img src="../imagenes/tosti loco con elote.jpg" alt="Tostilocos con elote">
+                <h3>Tostilocos con elote</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/tostitos flaming hot.jpg" alt="Tostitos Flamin Hot">
+                <h3>Tostitos preparados Flamin Hot</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/tostitos supremos.jpg" alt="Tostitos supremos">
+                <h3>Tostitos supremos especiales</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="maruchan" class="seccion-menu">
+        <h1 class="titulo-seccion">Nuestras Maruchan</h1>
+        <div class="contenedor-menu">
+            <div class="tarjeta-producto">
+                <img src="../imagenes/Maruchan con elotes.jpg" alt="Maruchan con elote">
+                <h3>Maruchan con elote</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/maruchan preparada.jpg" alt="Maruchan preparada">
+                <h3>Maruchan preparada especial</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/maruchan volvan.jpg" alt="Maruchan volcán">
+                <h3>Maruchan volcán</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="chicharron" class="seccion-menu">
+        <h1 class="titulo-seccion">Chicharrón Preparado</h1>
+        <div class="contenedor-menu">
+            <div class="tarjeta-producto">
+                <img src="../imagenes/CHICHARRON SENCILLO.jpg" alt="Chicharrón clásico">
+                <h3>Chicharrón clásico con cueritos</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/CHICHARRON CON ELOTE.jpg" alt="Chicharrón con elote">
+                <h3>Chicharrón con elote</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/CHICHARRON EXTREMO.jpg" alt="Chicharrón supremo">
+                <h3>Chicharrón supremo de la casa</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="ingredientes" class="seccion-menu">
+        <h1 class="titulo-seccion">Ingredientes Extras</h1>
+        <div class="contenedor-menu">
+            <div class="tarjeta-producto">
+                <img src="../imagenes/queso doble crema.jpg" alt="Queso doble crema">
+                <h3>Queso doble crema </h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/queso amarillo.jpg" alt="Queso Amarillo">
+                <h3>Queso Amarillo</h3>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="../imagenes/frituras.jpg" alt="Frituras">
+                <h3>Frituras</h3>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function mostrarSeccion(idSeccion) {
+            // 1. Buscamos todas las secciones del menú
+            let secciones = document.querySelectorAll('.seccion-menu');
+            
+            // 2. Las ocultamos todas por completo
+            secciones.forEach(sec => {
+                sec.style.display = 'none';
+            });
+            
+            // 3. Mostramos únicamente la sección a la que se le dio clic
+            document.getElementById(idSeccion).style.display = 'block';
+        }
+
+        // Al cargar la página por primera vez, mostramos automáticamente "elotes"
+        window.onload = function() {
+            mostrarSeccion('elotes');
+        };
+    </script>
+
+</body>
+</html>

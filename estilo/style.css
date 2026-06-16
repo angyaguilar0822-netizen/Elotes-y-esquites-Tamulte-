@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+  
+}
+
+.barras {
+    background-color: #fce4a8;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    gap: 20px;
+}
+
+.barras a {
+    text-decoration: none;   
+    color: #2c5e2e;          
+    padding: 5px 15px;      
+    border-radius: 20px;    
+    transition: background-color 0.3s ease; 
+}
+
+.barras a:hover:not(.activo) {
+    background-color: rgba(230, 230, 0, 0.5); 
+    color: #2c5e2e;
+}
+
+.barras a.activo {
+    background-color: #e6e600; 
+    color: #2c5e2e;          
+    text-decoration: none;   
+}
+
+.barras a.didi {
+    color: #ff9000;
+}
+
+/* ===  sección Principal  === */
+.parte-principal  {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('../imagenes/imagen principal de inicio.png');
+    background-size: cover;
+    background-position: center;
+    height: 450px; 
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    color: white;
+}
+
+.parte-principal h1 {
+    font-size: 3.8rem; 
+    max-width: 650px;  
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para resaltar */
+}
+
+.parte-principal p {
+    font-size: 1.4rem; 
+    max-width: 600px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.parte-principal span {
+    color: #ffcc00; 
+}
+
+
+.sucursales {
+    padding: 50px 5%; 
+    text-align: center;
+}
+
+.sucursales img {
+    width: 100%;                 
+    height: auto;
+    transition: transform 0.7s ease; 
+}
+
+
+.sucursales img:hover {
+    transform: scale(1.08);      
+    cursor: pointer;              
+}
+
+.tarjeta-sucursal {
+    overflow: hidden; 
+    border-radius: 10px; 
+}
+
+.titulo-inicial {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+/* === Sucursales  === */
+.grid-sucursales {
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex: 1; 
+    min-width: 450px;
+    max-width: 48%;  
+    text-align: left;
+    align-items: center;
+    gap: 20px;
+    background-color: #ffffff;
+}
+
+.card img {
+    width: 55%;  
+    height: 180px; 
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info {
+    width: 45%;
+}
+
+.buttom {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #8bc34a;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+
+/* === Nuestros Antojos  === */
+.grid-antojos {
+    display: flex;
+    justify-content: center;
+    gap: 60px; 
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 20px 5%;
+    text-align: center;
+}
+
+.antojo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease; 
+}
+
+.antojo-item:hover {
+    transform: translateY(-5px); 
+}
+
+.antojo-item img {
+    width: 240px;  
+    height: 240px; 
+    border-radius: 12px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.antojo-item p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.socials {
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+}
+/* Contenedor exacto para la imagen de los antojos */
+.contenedor-efecto {
+    position: relative;
+    overflow: hidden;         
+    border-radius: 12px;      
+    width: 100%;
+    height: 280px;            
+    display: block;
+}
+
+/* Forzar a la imagen a adaptarse a su contenedor */
+.contenedor-efecto img {
+    width: 100%;
+    height: 100%;             
+    object-fit: cover;       
+    display: block;
+}
+
+
+.capa-deslizable {
+    position: absolute;
+    top: 0;
+    left: 100%;               
+    width: 100%;
+    height: 100%;
+    background-color: #ffce2b; 
+    transition: left 0.4s ease;
+}
+
+
+.antojo-item:hover .capa-deslizable {
+    left: 0;
+}
+
+/* Formato para el texto de adentro */
+.texto-capa {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 85%;
+    font-family: Arial, sans-serif;
+}
+/* Controla el tamaño de los iconos de tus redes sociales */
+.icono-red {
+    width: 35px;         
+    height: 35px;         
+    object-fit: contain;  
+    transition: transform 0.3s ease;
+}
+
+
+.icono-red:hover {
+    transform: translateY(-3px); 
+}
+
+/* Asegura que los enlaces se alineen uno al lado del otro con espacio */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;            
+    margin-top: 10px;
+}
+/* Contenedor general del footer */
+.socials {
+    display: flex;
+    flex-direction: column;         
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 40px;               
+    padding-bottom: 0 !important;   
+    margin-bottom: 0 !important;    
+}
+
+/* Fila que controla los dos logos grandes */
+.fila-logos {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 40px;             
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;  
+}
+/* Tamaño y forma de los dos logos de las esquinas */
+.logo-izquierdo img, 
+.logo-derecho img {
+    width: 120px;                   
+    height: 120px;                  
+    object-fit: cover;              
+    border-radius: 50%;         
+    display: block;
+}
+
+.franja-redes {
+    background-color: #2c5e2e;      
+    width: auto;                   
+    padding: 15px 0;                
+    display: flex;
+    justify-content: center;        
+    margin-left: -40px;             
+    margin-right: -40px;            
+    margin-bottom: -20px;           
+    box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+    /* Barra de navegación en vertical */
+    .barras {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .barras a {
+        width: 100%;
+        text-align: center;
+        padding: 8px;
+    }
+
+    /* Ajuste del Banner principal */
+    .parte-principal {
+        height: 350px;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .parte-principal h1 {
+        font-size: 2.2rem;
+    }
+
+    .parte-principal p {
+        font-size: 1.1rem;
+    }
+
+    /* Grid de Sucursales a una sola columna */
+    .grid-sucursales {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        flex-direction: column; /* Foto arriba, texto abajo */
+        min-width: 100%;
+        max-width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        padding-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .info {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    /* Grid de Antojos */
+    .grid-antojos {
+        gap: 30px;
+    }
+
+    /* Footer y Logos */
+    .fila-logos {
+        flex-direction: column; /* Un logo arriba del otro */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .franja-redes {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}

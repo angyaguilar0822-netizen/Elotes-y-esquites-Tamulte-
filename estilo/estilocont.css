@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ==========================================================
+   BARRA DE SECCIONES (DISEÑO ORIGINAL CONSERVADO)
+   ========================================================== */
+.navbar {
+    background-color: #fce4a8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    gap: 20px;
+    width: 100%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #2c5e2e; 
+    font-weight: normal;        
+    font-size: 16.5px;          
+    padding: 6px 18px;          
+    border-radius: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-shadow: 0.1px 0.1px 0px rgba(44, 94, 46, 0.2); 
+}
+
+/* Color de burbuja suave al pasar el cursor */
+.navbar a:hover:not(.active):not(.didi) {
+    background-color: #f5df7a; 
+    color: #2c5e2e;
+}
+
+/* Burbuja activa fija (Ahora resalta Contacto) */
+.navbar a.active {
+    background-color: #e6e600; 
+    color: #2c5e2e;
+    font-weight: normal;       
+}
+
+/* Botón de Didi */
+.navbar a.didi {
+    color: #ff9900; 
+}
+
+.navbar a.didi:hover {
+    background-color: #2c5e2e;
+    color: #ffffff;
+}
+
+/* ==========================================================
+   DISEÑO DE LA SECCIÓN DE CONTACTO
+   ========================================================== */
+   
+/* 🌟 TÍTULO EN EL MEDIO REQUERIDO */
+.titulo-pagina {
+    text-align: center;
+    margin: 40px 0 30px 0;
+    font-size: 32px;
+    color: #000000;
+}
+
+/* Contenedor que separa las dos sucursales en horizontal */
+.contenedor-sucursales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 60px; /* Separación generosa entre bloques */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+/* Tarjeta individual de contacto */
+.tarjeta-sucursal {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    gap: 20px;
+    max-width: 450px;
+    width: 100%;
+}
+
+/* 🌟 ESTILO PARA TU ÍCONO DE CONTACTO */
+.icono-contacto {
+    width: 70px;         /* Tamaño ideal para un ícono llamativo sin ser tosco */
+    height: 70px;
+    object-fit: contain; /* Asegura que el ícono no se deforme */
+}
+
+/* Bloque de textos informativos */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info h3 {
+    font-size: 22px;
+    color: #2c5e2e; /* Le damos el toque verde de la marca a los subtítulos */
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.info p {
+    font-size: 15px;
+    color: #000000;
+    line-height: 1.4;
+}
+/* ==========================================================
+   DISEÑO RESPONSIVO (Añadir al final de estilocont.css)
+   ========================================================== */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .navbar a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .titulo-pagina {
+        font-size: 24px;
+        margin: 25px 0 15px 0;
+    }
+
+    .contenedor-sucursales {
+        flex-direction: column;
+        gap: 30px;
+        padding: 15px;
+    }
+
+    .tarjeta-sucursal {
+        flex-direction: column; /* Ícono arriba, textos abajo */
+        text-align: center;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .icono-contacto {
+        width: 60px;
+        height: 60px;
+    }
+}
